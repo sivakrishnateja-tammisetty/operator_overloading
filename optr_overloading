@@ -34,3 +34,50 @@ int main ()
   obj.display();
   return 0;
 }
+
+
+
+
+
+
+                                                                                  //BINARY OPTR OVERLOADING
+
+
+
+#include<iostream>
+using namespace std;
+class complex
+{
+    float f,s;
+    public:
+    complex()
+    {
+        f=0;
+        s=0;
+    }
+    complex(float f,float s)
+    {
+        this->f=f;
+        this->s=s;
+    }
+    complex operator +(const complex &x)
+    {
+        complex temp;
+        temp.f=f+x.f;
+        temp.s=s+x.s;
+        return temp;
+        
+    }
+    void display()
+    {
+        cout<<f<<" +i"<<s<<endl;
+    }
+};
+int main ()
+{
+  complex obj1(2,3);
+  complex obj2(4,2);
+  complex res=obj1+obj2;
+  res.display();
+  return 0;
+}
