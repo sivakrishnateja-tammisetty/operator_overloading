@@ -1,0 +1,36 @@
+POLYMORPHISM- is a key concept in object-oriented programming that allows us to write code that can work with different types of objects.
+
+FUNCTION OVERLOADING-is a process of using an operator instead of function to do a particular operation.
+
+
+
+
+
+                                                         //UNARY OPERATOR OVERLOADING
+
+#include<iostream>
+using namespace std;
+class unary_optr
+{
+    int value;
+    public:
+    unary_optr()
+    {
+        value=5;
+    }
+    void operator ++()
+    {
+        ++value;
+    }
+    void display()
+    {
+        cout<<value<<endl;
+    }
+};
+int main ()
+{
+  unary_optr obj;
+  ++obj;
+  obj.display();
+  return 0;
+}
