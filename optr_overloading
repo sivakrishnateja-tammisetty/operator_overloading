@@ -1,6 +1,12 @@
 POLYMORPHISM- is a key concept in object-oriented programming that allows us to write code that can work with different types of objects.
 
 OPERATOR OVERLOADING-is a process of using an operator instead of function to do a particular operation.
+we cannot overloded these following operators:
+  class member access operator(.,.*)
+  sizeof operator
+  conditional operator(?:)
+scope resolution operator(::)
+
 
 
 
@@ -80,4 +86,37 @@ int main ()
   complex res=obj1+obj2;
   res.display();
   return 0;
+}
+
+
+
+
+
+
+Eg:
+#include<iostream>
+#include<string.h>
+using namespace std;
+struct name{
+    char initial[30];
+};
+name operator +(name &s1,name &s2)
+{
+name s3;
+strcpy(s3.initial,s1.initial);
+strcat(s3.initial,s2.initial);
+return s3;
+}
+int main()
+{
+    name s1,s2,s3;
+    cout<<"Enter s1:";
+    cin>>s1.initial;
+    cout<<"Enter s2:";
+    cin>>s2.initial;
+    s3=s1 + s2;
+    cout<<s3.initial<<endl;
+
+    return 0;
+
 }
